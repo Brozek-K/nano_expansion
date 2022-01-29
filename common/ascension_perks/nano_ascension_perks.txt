@@ -15,12 +15,19 @@ ap_nanotech_synthetic = {
 			NOT = { has_authority = auth_hive_mind }
 		}
 		custom_tooltip = {
+			fail_text = "requires_robots_allowed"
+			NOT = { has_policy_flag = robots_outlawed }
+		}
+		custom_tooltip = {
 			fail_text = "requires_ascension_perks_3"
 			num_ascension_perks > 2
 		}
 		custom_tooltip = {
-			fail_text = "requires_ap_synthetic_evolution"
-			has_ascension_perk = ap_synthetic_evolution
+			fail_text = "requires_cyborg_or_mechanical"
+			OR = {
+				is_cyborg_empire = yes
+				is_mechanical_empire = yes
+			}
 		}
 		custom_tooltip = {
 			fail_text = "requires_technology_nanite_transmutation"
@@ -32,10 +39,10 @@ ap_nanotech_synthetic = {
 		host_has_dlc = "Distant Stars Story Pack"
 		host_has_dlc = "Utopia"
 		NOR = {
-			has_ascension_perk = ap_synthetic_transcendence
+			has_ascension_perk = ap_nanotech_synthetic
+			has_ascension_perk = ap_nanotech_organic
 			has_authority = "auth_machine_intelligence"
 		}
-		is_cyborg_empire = no
 		is_ai = no
 	}
 
@@ -115,10 +122,10 @@ ap_nanotech_organic = {
 		host_has_dlc = "Distant Stars Story Pack"
 		NOR = {
 			has_ascension_perk = ap_nanotech_organic
+			has_ascension_perk = ap_nanotech_synthetic
 			has_authority = "auth_machine_intelligence"
 		}
 		is_mechanical_empire = no
-		is_cyborg_empire = no
 		is_ai = no
 	}
 

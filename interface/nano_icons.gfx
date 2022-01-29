@@ -1,8 +1,7 @@
 spriteTypes = {
 
 	spriteType = {
-		name = "GFX_army_icons"
-		textureFile = "gfx/interface/planetview/army_icon.dds"
-		noOfFrames = 15
+		name = "GFX_army_type_nano"
+		texturefile = "gfx/interface/icons/armies/nano_army_icon.dds"
 	}
 }

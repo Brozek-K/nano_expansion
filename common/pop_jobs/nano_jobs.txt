@@ -15,17 +15,27 @@ nanoroboticist = {
 		is_sapient = yes
 	}
 
-	possible = {
-		specialist_job_check_trigger = yes
-	}
+	possible_precalc = can_fill_specialist_job
 
 	resources = {
 		category = planet_nanoroboticists
 		produces = {
 			nanites = 2
 		}
+		produces = {
+			trigger = {
+				owner = { has_technology = tech_attoscale_mechanics }
+			}
+			nanites = 1
+		}
 		upkeep = {
 			alloys = 5
+		}
+		upkeep = {
+			trigger = {
+				owner = { has_technology = tech_attoscale_mechanics }
+			}
+			alloys = 2
 		}
 	}
 
@@ -87,17 +97,27 @@ nanoroboticist_drone = {
 		is_sapient = yes
 	}
 
-	possible = {
-		drone_job_check_trigger = yes
-	}
+	possible_precalc = can_fill_drone_job
 
 	resources = {
 		category = planet_nanoroboticists
 		produces = {
 			nanites = 2
 		}
+		produces = {
+			trigger = {
+				owner = { has_technology = tech_attoscale_mechanics }
+			}
+			nanites = 1
+		}
 		upkeep = {
 			alloys = 5
+		}
+		upkeep = {
+			trigger = {
+				owner = { has_technology = tech_attoscale_mechanics }
+			}
+			alloys = 2
 		}
 	}
 

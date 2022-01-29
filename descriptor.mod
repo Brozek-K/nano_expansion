@@ -1,4 +1,4 @@
-version="1.0"
+version="1.26"
 tags={
 	"Events"
 	"Economy"
@@ -8,6 +8,13 @@ tags={
 	"Overhaul"
 	"Technologies"
 	"Graphics"
+	"Nanites"
+	"Leaders"
+	"Traits"
+	"Megastructure"
+	"Colossus"
 }
-name="Nanites Expansion"
-supported_version="3.0.*"
+name="Nanite Expansion"
+picture="thumbnail.png"
+supported_version="3.2.*"
+remote_file_id="2498990660"

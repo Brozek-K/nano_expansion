@@ -5,6 +5,7 @@
 # Fog Tier 1
 decision_planetary_utility_fog = {
 	owned_planets_only = yes
+	sound = event_synthetic_evolution_01
 
 	# instant
 
@@ -22,10 +23,12 @@ decision_planetary_utility_fog = {
 		owner = { 
 			is_regular_empire = yes 
 			is_gestalt = no
+			has_technology = tech_ubiquitous_smartdust
 		}
 		NOT = { has_modifier = utility_fog }
 		NOT = { has_modifier = angelnet }
 		NOT = { has_modifier = sophont_angelnet }
+		NOT = { has_modifier = toposophont_angelnet }
 	}
 
 	allow = {
@@ -33,6 +36,7 @@ decision_planetary_utility_fog = {
 		NOT = { has_modifier = utility_fog }
 		NOT = { has_modifier = angelnet }
 		NOT = { has_modifier = sophont_angelnet }
+		NOT = { has_modifier = toposophont_angelnet }
 	}
 
 	effect = {
@@ -43,6 +47,7 @@ decision_planetary_utility_fog = {
 # Fog Tier 2
 decision_planetary_autonomous_fog = {
 	owned_planets_only = yes
+	sound = event_synthetic_evolution_01
 
 	enactment_time = 360
 	resources = {
@@ -78,6 +83,7 @@ decision_planetary_autonomous_fog = {
 # Fog Tier 3
 decision_planetary_sophont_fog = {
 	owned_planets_only = yes
+	sound = event_synthetic_evolution_01
 
 	enactment_time = 720
 	resources = {
@@ -108,10 +114,45 @@ decision_planetary_sophont_fog = {
 	}
 }
 
+# Fog Tier 4
+decision_planetary_toposophont_fog = {
+	owned_planets_only = yes
+	sound = event_synthetic_evolution_01
+
+	enactment_time = 960
+	resources = {
+		category = decisions
+		cost = {
+			nanites = 3000
+			influence = 60
+		}
+	}
+
+	potential = {
+		has_modifier = sophont_angelnet
+		owner = { 
+			is_regular_empire = yes
+			is_gestalt = no
+			has_technology = tech_toposophont_fogs
+		}
+		NOT = { has_modifier = toposophont_angelnet }
+	}
+
+	allow = {
+		owner = { has_technology = tech_toposophont_fogs }
+		NOT = { has_modifier = toposophont_angelnet }
+	}
+
+	effect = {
+		add_modifier = { modifier = toposophont_angelnet days = -1 }
+		remove_modifier = sophont_angelnet
+	}
+}
 
 # Remove Fog
 decision_dismantle_fog = {
 	owned_planets_only = yes
+	sound = event_life_support_fail
 
 	enactment_time = 90
 	resources = {
@@ -126,9 +167,11 @@ decision_dismantle_fog = {
 			has_modifier = utility_fog
 			has_modifier = angelnet
 			has_modifier = sophont_angelnet
+			has_modifier = toposophont_angelnet
 			has_modifier = utility_fog_hive
 			has_modifier = angelnet_hive
 			has_modifier = sophont_angelnet_hive
+			has_modifier = toposophont_angelnet_hive
 		}
 	}
 
@@ -146,6 +189,10 @@ decision_dismantle_fog = {
 			remove_modifier = sophont_angelnet
 		}
 		else_if = {
+			limit = { has_modifier = toposophont_angelnet }
+			remove_modifier = toposophont_angelnet
+		}
+		else_if = {
 			limit = { has_modifier = utility_fog_hive }
 			remove_modifier = utility_fog_hive
 		}
@@ -153,9 +200,13 @@ decision_dismantle_fog = {
 			limit = { has_modifier = angelnet_hive }
 			remove_modifier = angelnet_hive
 		}
-		else = {
+		else_if = {
 			limit = { has_modifier = sophont_angelnet_hive }
 			remove_modifier = sophont_angelnet_hive
+		}
+		else = {
+			limit = { has_modifier = toposophont_angelnet_hive }
+			remove_modifier = toposophont_angelnet_hive
 		}
 		custom_tooltip = decision_revoke_market_nomination_effect
 	}
@@ -170,6 +221,7 @@ decision_dismantle_fog = {
 # Gestalt Fog Tier 1
 decision_planetary_utility_fog_hive = {
 	owned_planets_only = yes
+	sound = event_synthetic_evolution_01
 
 	# instant
 
@@ -185,17 +237,18 @@ decision_planetary_utility_fog_hive = {
 	potential = {
 		exists = owner
 		owner = { 
-			is_regular_empire = yes 
 			is_gestalt = yes
+			has_technology = tech_ubiquitous_smartdust
 		}
 
 	}
 
 	allow = {
 		owner = { has_technology = tech_ubiquitous_smartdust }
-		NOT = { has_modifier = utility_fog }
-		NOT = { has_modifier = angelnet }
-		NOT = { has_modifier = utility_fog }
+		NOT = { has_modifier = utility_fog_hive }
+		NOT = { has_modifier = angelnet_hive }
+		NOT = { has_modifier = sophont_angelnet_hive }
+		NOT = { has_modifier = toposophont_angelnet_hive }
 	}
 
 	effect = {
@@ -206,6 +259,7 @@ decision_planetary_utility_fog_hive = {
 # Gestalt Fog Tier 2
 decision_planetary_autonomous_fog_hive = {
 	owned_planets_only = yes
+	sound = event_synthetic_evolution_01
 
 	enactment_time = 360
 	resources = {
@@ -219,7 +273,6 @@ decision_planetary_autonomous_fog_hive = {
 	potential = {
 		has_modifier = utility_fog_hive
 		owner = { 
-			is_regular_empire = yes 
 			is_gestalt = yes
 		}
 	}
@@ -239,6 +292,7 @@ decision_planetary_autonomous_fog_hive = {
 # Gestalt Fog Tier 3
 decision_planetary_sophont_fog_hive = {
 	owned_planets_only = yes
+	sound = event_synthetic_evolution_01
 
 	enactment_time = 720
 	resources = {
@@ -252,18 +306,49 @@ decision_planetary_sophont_fog_hive = {
 	potential = {
 		has_modifier = angelnet_hive
 		owner = { 
-			is_regular_empire = yes 
 			is_gestalt = yes
 		}
 	}
 
 	allow = {
 		owner = { has_technology = tech_sophont_fogs }
-		NOT = { has_modifier = utility_fog }
+		NOT = { has_modifier = sophont_angelnet_hive }
 	}
 
 	effect = {
 		add_modifier = { modifier = sophont_angelnet_hive days = -1 }
 		remove_modifier = angelnet_hive
+	}
+}
+
+# Gestalt Fog Tier 4
+decision_planetary_toposophont_fog_hive = {
+	owned_planets_only = yes
+	sound = event_synthetic_evolution_01
+
+	enactment_time = 960
+	resources = {
+		category = decisions
+		cost = {
+			nanites = 3000
+			influence = 60
+		}
+	}
+
+	potential = {
+		has_modifier = sophont_angelnet_hive
+		owner = { 
+			is_gestalt = yes
+		}
+	}
+
+	allow = {
+		owner = { has_technology = tech_toposophont_fogs }
+		NOT = { has_modifier = toposophont_angelnet_hive }
+	}
+
+	effect = {
+		add_modifier = { modifier = toposophont_angelnet_hive days = -1 }
+		remove_modifier = sophont_angelnet_hive
 	}
 }
