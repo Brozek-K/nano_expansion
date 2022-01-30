@@ -41,7 +41,7 @@ country_event = {
 			}
 			2 = {
 				modifier = { # 50% chance if self preservation in effect
-					has_swapped_tradition = tr_synchronicity_self_preservation
+					has_active_tradition = tr_synchronicity_self_preservation
 					factor = 0.5
 				}
 				modifier = {
@@ -93,7 +93,7 @@ country_event = {
 			}
 			2 = {
 				modifier = { # 50% chance if self preservation in effect
-					has_swapped_tradition = tr_synchronicity_self_preservation
+					has_active_tradition = tr_synchronicity_self_preservation
 					factor = 0.5
 				}
 				modifier = {
@@ -144,7 +144,7 @@ country_event = {
 			}
 			2 = {
 				modifier = { # 50% chance if self preservation in effect
-					has_swapped_tradition = tr_synchronicity_self_preservation
+					has_active_tradition = tr_synchronicity_self_preservation
 					factor = 0.5
 				}
 				modifier = {
@@ -195,7 +195,7 @@ country_event = {
 			}
 			2 = {
 				modifier = { # 50% chance if self preservation in effect
-					has_swapped_tradition = tr_synchronicity_self_preservation
+					has_active_tradition = tr_synchronicity_self_preservation
 					factor = 0.5
 				}
 				modifier = {
@@ -246,7 +246,7 @@ country_event = {
 			}
 			2 = {
 				modifier = { # 50% chance if self preservation in effect
-					has_swapped_tradition = tr_synchronicity_self_preservation
+					has_active_tradition = tr_synchronicity_self_preservation
 					factor = 0.5
 				}
 				modifier = {
@@ -297,7 +297,7 @@ country_event = {
 			}
 			2 = {
 				modifier = { # 50% chance if self preservation in effect
-					has_swapped_tradition = tr_synchronicity_self_preservation
+					has_active_tradition = tr_synchronicity_self_preservation
 					factor = 0.5
 				}
 				modifier = {

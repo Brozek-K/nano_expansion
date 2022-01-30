@@ -71,14 +71,13 @@ can_destroy_planet_with_PLANET_KILLER_NANO = {
 					NOT = { exists = space_owner }
 					AND = {
 						exists = space_owner
-						space_owner = { is_same_value = from.owner }
+						is_owned_by = from.owner
 					}
 				}
 				OR = {
 					habitable_planet = yes
 					uninhabitable_regular_planet = yes
-					is_planet_class = pc_ringworld_habitable
-					is_planet_class = pc_habitat
+					is_artificial = yes
 					nano_is_crackable_planet = yes
 				}
 			}

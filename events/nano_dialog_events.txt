@@ -139,7 +139,7 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		random_country = {
+		random_playable_country = {
 			limit = {
 				is_country_type = default
 				any_owned_megastructure = {

@@ -23,8 +23,7 @@ planet_event = {
 		from = {
 			OR = {
 				is_country_type = default
-				is_country_type = fallen_empire
-				is_country_type = awakened_fallen_empire
+				is_fallen_empire = yes
 			}
 		}
 		habitable_planet = yes
@@ -160,8 +159,7 @@ country_event = {
 				limit = {
 					OR = {
 						is_country_type = default
-						is_country_type = fallen_empire
-						is_country_type = awakened_fallen_empire
+						is_fallen_empire = yes
 					}
 				}
 				every_owned_leader = {
@@ -362,8 +360,7 @@ country_event = {
 				limit = {
 					OR = {
 						is_country_type = default
-						is_country_type = fallen_empire
-						is_country_type = awakened_fallen_empire
+						is_fallen_empire = yes
 					}
 				}
 				every_owned_leader = {
@@ -590,8 +587,7 @@ country_event = {
 	option = {
 		trigger = {
 			OR = {
-				has_ethic = ethic_militarist
-				has_ethic = ethic_fanatic_militarist
+				is_militarist = yes
 				has_valid_civic = civic_hive_devouring_swarm
 				has_valid_civic = civic_machine_terminator
 				has_valid_civic = civic_hive_strength_of_legions
@@ -612,10 +608,7 @@ country_event = {
 
 	option = {
 		trigger = {
-			OR = {
-				has_ethic = ethic_pacifist
-				has_ethic = ethic_fanatic_pacifist
-			}
+			is_pacifist = yes
 		}
 		name = nano.1340.b
 		event_target:nano_personality_decision = {
@@ -631,10 +624,7 @@ country_event = {
 
 	option = {
 		trigger = {
-			OR = {
-				has_ethic = ethic_xenophobe
-				has_ethic = ethic_fanatic_xenophobe
-			}
+			is_xenophobe = yes
 			NOT = {
 				has_ascension_perk = ap_synthetic_evolution
 			}
@@ -655,10 +645,7 @@ country_event = {
 		trigger = {
 			AND = {
 				has_ascension_perk = ap_synthetic_evolution
-				OR = {
-					has_ethic = ethic_xenophobe
-					has_ethic = ethic_fanatic_xenophobe
-				}
+				is_xenophobe = yes
 			}
 		}
 		name = nano.1340.c
@@ -675,10 +662,7 @@ country_event = {
 
 	option = {
 		trigger = {
-			OR = {
-				has_ethic = ethic_xenophile
-				has_ethic = ethic_fanatic_xenophile
-			}
+			is_xenophile = yes
 		}
 		name = nano.1340.d
 		event_target:nano_personality_decision = {
@@ -695,8 +679,7 @@ country_event = {
 	option = {
 		trigger = {
 			OR = {
-				has_ethic = ethic_egalitarian
-				has_ethic = ethic_fanatic_egalitarian
+				is_egalitarian = yes
 				has_valid_civic = civic_machine_servitor
 			}
 		}
@@ -714,10 +697,7 @@ country_event = {
 
 	option = {
 		trigger = {
-			OR = {
-				has_ethic = ethic_authoritarian
-				has_ethic = ethic_fanatic_authoritarian
-			}
+			is_authoritarian = yes
 		}
 		name = nano.1340.f
 		event_target:nano_personality_decision = {
@@ -734,8 +714,7 @@ country_event = {
 	option = {
 		trigger = {
 			OR = {
-				has_ethic = ethic_spiritualist
-				has_ethic = ethic_fanatic_spiritualist
+				is_spiritualist = yes
 				has_valid_civic = civic_hive_memorialist
 				has_valid_civic = civic_machine_memorialist
 			}
@@ -755,8 +734,7 @@ country_event = {
 	option = {
 		trigger = {
 			OR = {
-				has_ethic = ethic_materialist
-				has_ethic = ethic_fanatic_materialist
+				is_materialist = yes
 				has_valid_civic = civic_machine_introspective
 				has_valid_civic = civic_machine_predictive_analysis
 				has_valid_civic = civic_hive_natural_neural_network
